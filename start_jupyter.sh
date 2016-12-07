@@ -12,6 +12,6 @@ fi
 IMAGE=$IMAGE_REPO$IMAGE_TAG
 NAME=pyotr777_synth #synt_tensor
 
-docker run -ti -p 8888:8888 --name $NAME -v $(pwd):$MOUNT_DIR $IMAGE /bin/bash
+docker run -d -p 8888:8888 --name $NAME -v $(pwd):$MOUNT_DIR $IMAGE
 sleep 5
 open http://localhost:8888
