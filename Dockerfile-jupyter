@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN apt-get update && apt-get install -y gfortran && apt-get -y autoremove
 
 RUN apt-get install -y libtiff5-dev libjpeg-dev && apt-get -y autoremove
-RUN apt-get install -y python-setuptools python-pip python-numpy python-scipy python-pandas \
+RUN apt-get install -y python-setuptools python-pip 
+RUN apt-get install -y python-numpy python-scipy python-pandas \
     python-tk && apt-get -y autoremove
 
 RUN /usr/bin/python --version
@@ -25,4 +26,4 @@ RUN pip install "ipython[notebook]"
 RUN pip install -U matplotlib
 RUN pip install -U Pillow
 WORKDIR /root
-CMD "jupyter notebook --no-browser --ip=0.0.0.0"
+CMD jupyter notebook --no-browser --ip=0.0.0.0
