@@ -10,7 +10,7 @@ if [[ $1 ]]; then
 	IMAGE_TAG=":$1"
 fi
 IMAGE=$IMAGE_REPO$IMAGE_TAG
-NAME=pyotr777_synth #synt_tensor
+NAME=jupyter #synt_tensor
 
 docker run -d -p 8888:8888 --name $NAME -v $(pwd):$MOUNT_DIR $IMAGE
 sleep 5

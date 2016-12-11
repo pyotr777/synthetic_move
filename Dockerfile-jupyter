@@ -22,8 +22,9 @@ RUN /usr/bin/python --version
 
 RUN pip install -U pip
 RUN pip install nose
-RUN pip install "ipython[notebook]"
+#RUN pip install "ipython[notebook]"
+RUN pip install -U jupyter
 RUN pip install -U matplotlib
 RUN pip install -U Pillow
 WORKDIR /root
-CMD jupyter notebook --no-browser --ip=0.0.0.0
+CMD jupyter notebook --no-browser --ip=0.0.0.0 --NotebookApp.token=""
